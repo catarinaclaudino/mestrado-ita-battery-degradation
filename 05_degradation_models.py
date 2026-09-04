@@ -169,7 +169,7 @@ class PolynomialModel(DegradationModel):
     def __init__(self, degree):
         self.degree = degree
         super().__init__(f'Polynomial (degree {degree})',
-                        f'SoH(N) = β₀ + Σ βᵢ·Nⁱ (i=1..{degree})')
+                        f'SoH(N) = β₀ + Σ β_i·N^i (i=1..{degree})')
         self.n_params = degree + 1
     
     def fit(self, X, y):
@@ -260,7 +260,7 @@ class PowerLawModel(DegradationModel):
     """
     
     def __init__(self):
-        super().__init__('Power-Law', 'SoH(N) = β₀ - β₁·Nᵝ²')
+        super().__init__('Power-Law', 'SoH(N) = β₀ - β₁·N^β₂')
         self.n_params = 3
     
     def fit(self, X, y):
@@ -557,7 +557,7 @@ def main():
         print(f"✓ Best model by R²: {comparison_table.loc[comparison_table['R²'].notna()].sort_values('R²', ascending=False).iloc[0]['Model']}")
         print(f"✓ Figures saved to: {FIGURES_DIR}")
         print(f"✓ Tables saved to: {TABLES_DIR}")
-        print("\nNext step: Run 06_model_selection.py")
+        print("\nNext step: Run 06_model_selection_and_validation.py")
         print("="*DIVIDER_WIDTH + "\n")
         
         return models, comparison_table

@@ -270,7 +270,7 @@ def generate_exploratory_figures(soh_df):
     ax.set_ylabel('Cycle-to-Cycle SoH Change (%/cycle)', fontsize=FONT_SIZE_LABEL)
     ax.set_title('Cycle-to-Cycle Degradation Rate Variation', fontsize=FONT_SIZE_TITLE, fontweight='bold')
     ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=FONT_SIZE_LEGEND)
+    ax.legend(fontsize=10)
     ax.tick_params(labelsize=FONT_SIZE_TICK)
     
     plt.tight_layout()
@@ -294,7 +294,7 @@ def generate_exploratory_figures(soh_df):
     ax.set_xlabel('State of Health (%)', fontsize=FONT_SIZE_LABEL)
     ax.set_ylabel('Frequency', fontsize=FONT_SIZE_LABEL)
     ax.set_title('Distribution of SoH Values', fontsize=FONT_SIZE_TITLE, fontweight='bold')
-    ax.legend(fontsize=FONT_SIZE_LEGEND)
+    ax.legend(fontsize=10)
     ax.tick_params(labelsize=FONT_SIZE_TICK)
     
     plt.tight_layout()
